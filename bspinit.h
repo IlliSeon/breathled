@@ -20,13 +20,13 @@ extern void breath_led(void);
 #define LED2_ON()              do{GPIOB->PCOR|=GPIO_PTH2_MASK;}while(0)
 #define LED2_OFF()             do{GPIOB->PSOR|=GPIO_PTH2_MASK;}while(0)
 
-#define IS_KEY1_DOWN()         ( ((GPIOA->PDIR&GPIO_PTA0_MASK)==0)? 1:0 )
+#define IS_KEY1_DOWN()          ((GPIOA->PDIR&GPIO_PTA0_MASK)==0)
 
-#define IS_KEY1_UP()           ( ((GPIOA->PDIR&GPIO_PTA0_MASK)==1)? 1:0 )
+#define IS_KEY1_UP()            ((GPIOA->PDIR&GPIO_PTA0_MASK)==1)
 
-#define IS_KEY2_DOWN()         ( ((GPIOA->PDIR&GPIO_PTD0_MASK)==0)? 1:0 )
+#define IS_KEY2_DOWN()          ((GPIOA->PDIR&GPIO_PTD0_MASK)==0)
 
-#define IS_KEY2_UP()           ( ((GPIOA->PDIR&GPIO_PTD0_MASK)==1)? 1:0 )
+#define IS_KEY2_UP()            ((GPIOA->PDIR&GPIO_PTD0_MASK)==1)
 
 
 #endif

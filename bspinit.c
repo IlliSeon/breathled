@@ -67,7 +67,6 @@ serial_out(uint8_t chByte)
 bool
 serial_in(uint8_t *pchByte)
 {
-    s_timer->wTick++;
     if(pchByte!=NULL) {
         if((UART1->S1 & UART_S1_RDRF_MASK)) {
             *pchByte=UART1->D;
@@ -91,6 +90,7 @@ timer_init(void)
 void
 breath_led(void)
 {
+    s_timer->wTick++;
     if(s_timer->wTick>=s_timer->wPeriod) {
         s_timer->wTick=0;
         s_timer->chTimeflag=1;
