@@ -80,10 +80,11 @@ serial_in(uint8_t *pchByte)
 void
 timer_init(void)
 {
-    s_timer->wTick=0;
-    s_timer->wPeriod=650;
-    s_timer->nOffset=1;
-    s_timer->chTimeflag=0;
+	s_timer->wTick=0;
+	s_timer->wPeriod=650;
+	s_timer->wDuty=400;
+	s_timer->nOffset=1;
+	s_timer->chTimeflag=0;
 }
 
 
